@@ -1,33 +1,33 @@
-import  { createStore } from 'vuex';
-import axios from 'axios';
+// store/index.js
+import { createStore } from 'vuex';
 
 export default createStore({
-    state:{
-        products: [],
-        selectedProduct: [],
-
+  state: {
+    products: [],
+    selectedProduct: null
+  },
+  getters: {
+    products: state => state.products,
+    selectedProduct: state => state.selectedProduct
+  },
+  actions: {
+    async fetchProducts({ commit }) {
+      const response = await fetch('https://alvahtek.com/projects/ota/group2/getproductapi.php');
+      const data = await response.json();
+      commit('setProducts', data);
     },
-    getters: {
-        totalProducts(state) {
-            return state.products.length;
-        },
+    async fetchProductById({ commit }, id) {
+      const response = await fetch(`https://alvahtek.com/projects/ota/group2/getproductapi.php=${id}`);
+      const data = await response.json();
+      commit('setSelectedProduct', data);
+    }
+  },
+  mutations: {
+    setProducts(state, products) {
+      state.products = products;
     },
-    mutations: {
-        SET_PRODUCTS(state, products) {
-            state.products = products
-        },
-        SET_SELECTED_PRODUCT(state, product) {
-            state.selectedProduct = product;
-        }
-    },
-    actions: {
-        async fetchProducts({ commit }) {
-            const response = await axios.get('http://localhost/Product/getproductapi.php')
-                commit('SET_PRODUCTS', response.data);
-        },
-        async fetchProductsById({ commit },  id) {
-            const response = await axios.get(`http://localhost/EMPLOYEESDATA/apiGet.php?id=${id}`)
-                commit('SET_SELECTED_EMPLOYEES', response.data);
-    },
-}
+    setSelectedProduct(state, product) {
+      state.selectedProduct = product;
+    }
+  }
 });

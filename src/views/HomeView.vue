@@ -1,61 +1,88 @@
 <template>
-<div class="container">
-        <div class="row mt-5 mb-4">
-            <div class=" d-flex align-items-center alert alert-primary">
-                <Header class="display-4 " title="Home" description="Discover your favorite products at amazing price"/>
-                <img src="../assets/images/samsung.jpg" alt="Image">
-            </div>
-            <div class="d-flex justify-content-end" >
-                <RouterLink to="/product" class="btn btn-primary">Shop Now</RouterLink>
-            </div>
-        </div>
+  <div class="container">
+
+    <div class="row mt-5 mb-4">
+      <div class="d-flex align-items-center alert alert-primary">
+        <Header class="display-4" title="Home" description="Discover your favorite products at amazing prices" />
+        <img src="@/assets/images/samsung.jpg" alt="Image">
+      </div>
+      <div class="d-flex justify-content-end">
+        <router-link to="/products" class="btn btn-primary">Shop Now</router-link>
+      </div>
+    </div>
     <h1>Featured Products</h1>
     <div class="row">
-        <div class="col-md-3"> <!-- first colume of first row -->
-                <div class="card" style="width: 18rem;">
-        <img src="../assets/images/earpord.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-            <a href="" class="btn btn-primary">Go somewhere</a>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="@/assets/images/samsung.jpg" class="card-img-top" alt="Samsung">
+          <div class="card-body">
+            <h5 class="card-title">Samsung Galaxy</h5>
+            <p class="card-text">Experience the latest Samsung Galaxy with advanced features.</p>
+            <router-link to="/product/samsung-galaxy" class="btn btn-primary">View Details</router-link>
+          </div>
         </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="@/assets/images/samsung.jpg" class="card-img-top" alt="Samsung">
+          <div class="card-body">
+            <h5 class="card-title">Samsung Note</h5>
+            <p class="card-text">The Samsung Note with powerful performance and sleek design.</p>
+            <router-link to="/product/samsung-note" class="btn btn-primary">View Details</router-link>
+          </div>
         </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="@/assets/images/bag.jpg" class="card-img-top" alt="Bag">
+          <div class="card-body">
+            <h5 class="card-title">Leather Bag</h5>
+            <p class="card-text">Premium quality leather bag for all your needs.</p>
+            <router-link to="/product/leather-bag" class="btn btn-primary">View Details</router-link>
+          </div>
         </div>
-        <div class="col-md-3"> <!-- second colume of first row -->
-                <div class="card" style="width: 18rem;">
-        <img src="../assets/images/samsung.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="@/assets/images/note-phones_260x144.png" class="card-img-top" alt="Note Phones">
+          <div class="card-body">
+            <h5 class="card-title">Note Phones</h5>
+            <p class="card-text">RAM 37 ROM - High-performance note phones for all your needs.</p>
+            <router-link to="/product/note-phones" class="btn btn-primary">View Details</router-link>
+          </div>
         </div>
-        </div>
-        </div>
-<div class="col-md-3"> <!-- third colume of first row -->
-                <div class="card" style="width: 18rem;">
-        <img src="../assets/images/bag.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-        </div>
-        <div class="col-md-3"> <!-- fourth colume of first row -->
-                <div class="card" style="width: 18rem;">
-        <img src="../assets/images/note-phones_260x144.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-        </div>
+      </div>
     </div>
-    
-</div>
-pkj
+
+     <footer class="bg-dark text-white text-center p-3 mt-5">
+    <div class="container">
+      <p>&copy; 2024 My Store. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  </div>
 </template>
+
 <script setup>
-import Header from '@/components/Header.vue'
+import Header from '@/components/Header.vue';
 </script>
+
+<style scoped>
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.ml-3 {
+  margin-left: 1rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+</style>
